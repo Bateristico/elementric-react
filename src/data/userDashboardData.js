@@ -3,7 +3,7 @@ import { MdOutlineSupervisorAccount, MdOutlineApartment } from 'react-icons/md';
 import { HiOutlineDeviceMobile } from 'react-icons/hi';
 import { AiOutlineBell } from 'react-icons/ai';
 
-export const buildingData = [
+export const dashboardData = [
   {
     icon: <MdOutlineApartment />,
     amount: '15',

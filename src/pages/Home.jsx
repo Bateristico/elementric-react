@@ -11,7 +11,7 @@ import {
   ecomPieChartData,
 } from '../data/dummy';
 
-import { buildingData } from '../data/userBuildingData';
+import { dashboardData } from '../data/userDashboardData';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -39,7 +39,7 @@ const Home = () => {
         </div>
         {/* Items section  */}
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-          {buildingData.map((item) => (
+          {dashboardData.map((item) => (
             <div
               key={item.title}
               className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2x1"
