@@ -64,6 +64,10 @@ export const links = [
         name: 'Login',
         icon: <AiOutlineLogin />,
       },
+      {
+        name: 'Ecommerce',
+        icon: <AiOutlineLogin />,
+      },
     ],
   },
 ];

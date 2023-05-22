@@ -15,6 +15,7 @@ import {
   Users,
   Webhooks,
   Login,
+  Ecommerce,
 } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -57,24 +58,26 @@ const App = () => {
               {' '}
               <Navbar />
             </div>
-          </div>
-          <div>
-            <Routes>
-              {/*Main Dashboard */}
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/organization" element={<Organization />} />
-              <Route path="/maps" element={<Maps />} />
-              <Route path="/list" element={<Buildings />} />
-              <Route path="/users" element={<Users />} />
-              {/*App*/}
-              <Route path="/events" element={<Events />} />
-              <Route path="/webhooks" element={<Webhooks />} />
-              {/*Settings*/}
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/billing" element={<Billing />} />
-              <Route path="/Login" element={<Login />} />
-            </Routes>
+
+            <div>
+              <Routes>
+                {/*Main Dashboard */}
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/organization" element={<Organization />} />
+                <Route path="/maps" element={<Maps />} />
+                <Route path="/list" element={<Buildings />} />
+                <Route path="/users" element={<Users />} />
+                {/*App*/}
+                <Route path="/events" element={<Events />} />
+                <Route path="/webhooks" element={<Webhooks />} />
+                {/*Settings*/}
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/billing" element={<Billing />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/ecommerce" element={<Ecommerce />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </BrowserRouter>
