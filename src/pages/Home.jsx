@@ -3,6 +3,8 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 
 import { GoPrimitiveDot } from 'react-icons/go';
 
+import { Stacked, Pie, SparkLine } from '../components';
+
 import {
   earningData,
   SparkLineAreaData,
