@@ -1,24 +1,28 @@
-import React, { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { FiSettings } from 'react-icons/fi'
-import { TooltipComponent } from '@syncfusion/ej2-react-popups'
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FiSettings } from 'react-icons/fi';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components'
+import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import {
   Home,
   Billing,
-  BuildingList,
-  BuildingMaps,
+  Buildings,
+  Maps,
   Events,
   Organization,
   Settings,
   Users,
   Webhooks,
-} from './pages'
-import './App.css'
+  Login,
+} from './pages';
+
+import { useStateContext } from './contexts/ContextProvider';
+import './App.css';
 
 const App = () => {
-  const activeMenu = true // momentarely
+  const { activeMenu } = useStateContext();
+
   return (
     <div>
       <BrowserRouter>
@@ -60,8 +64,8 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/organization" element={<Organization />} />
-              <Route path="/buildingmaps" element={<BuildingMaps />} />
-              <Route path="/buildinglist" element={<BuildingList />} />
+              <Route path="/maps" element={<Maps />} />
+              <Route path="/list" element={<Buildings />} />
               <Route path="/users" element={<Users />} />
               {/*App*/}
               <Route path="/events" element={<Events />} />
@@ -69,12 +73,13 @@ const App = () => {
               {/*Settings*/}
               <Route path="/settings" element={<Settings />} />
               <Route path="/billing" element={<Billing />} />
+              <Route path="/Login" element={<Login />} />
             </Routes>
           </div>
         </div>
       </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

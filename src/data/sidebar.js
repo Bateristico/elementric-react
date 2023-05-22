@@ -1,9 +1,13 @@
-import React from 'react'
-import { AiOutlineHome, AiOutlineNotification } from 'react-icons/ai'
-import { FiUsers, FiSettings } from 'react-icons/fi'
-import { BsBuildings } from 'react-icons/bs'
-import { SlOrganization, SlMap } from 'react-icons/sl'
-import { MdWebhook, MdPayment } from 'react-icons/md'
+import React from 'react';
+import {
+  AiOutlineHome,
+  AiOutlineNotification,
+  AiOutlineLogin,
+} from 'react-icons/ai';
+import { FiUsers, FiSettings } from 'react-icons/fi';
+import { BsBuildings } from 'react-icons/bs';
+import { SlOrganization, SlMap } from 'react-icons/sl';
+import { MdWebhook, MdPayment } from 'react-icons/md';
 
 export const links = [
   {
@@ -18,11 +22,11 @@ export const links = [
         icon: <SlOrganization />,
       },
       {
-        name: 'Building Map',
+        name: 'Maps',
         icon: <SlMap />,
       },
       {
-        name: 'Building List',
+        name: 'List',
         icon: <BsBuildings />,
       },
       {
@@ -40,7 +44,7 @@ export const links = [
         icon: <AiOutlineNotification />,
       },
       {
-        name: 'Webhook',
+        name: 'Webhooks',
         icon: <MdWebhook />,
       },
     ],
@@ -56,6 +60,10 @@ export const links = [
         name: 'Billing',
         icon: <MdPayment />,
       },
+      {
+        name: 'Login',
+        icon: <AiOutlineLogin />,
+      },
     ],
   },
-]
+];
