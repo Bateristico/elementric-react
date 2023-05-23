@@ -1,18 +1,9 @@
 import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
-
+import { BsFillBuildingFill } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-
-import { Stacked, Pie, SparkLine, Button } from '../components';
-
-import {
-  earningData,
-  SparkLineAreaData,
-  ecomPieChartData,
-} from '../data/dummy';
+import { Button } from '../components';
 
 import { dashboardData } from '../data/userDashboardData';
-
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Home = () => {
@@ -20,13 +11,20 @@ const Home = () => {
   return (
     <div className="mt-24">
       {/* Total bulding section  */}
-      <div className="flex flex-wrap lg:flex-nowrap justify-center">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Total Buildings</p>
-              <p>10</p>
+              <p className="text-2xl">10</p>
             </div>
+            <button
+              type="button"
+              style={{ backgroundColor: currentColor }}
+              className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
+            >
+              <BsFillBuildingFill />
+            </button>
           </div>
           <div className="mt-6">
             <Button
