@@ -8,6 +8,6 @@ export { default as Settings } from './Settings';
 export { default as Users } from './Users';
 export { default as Webhooks } from './Webhooks';
 export { default as Home } from './Home';
-export { default as Login } from './Login';
+export { default as ColorPicker } from './ColorPicker';
 // remove later
-export { default as Ecommerce } from './Ecommerce';
+export { default as Login } from './Login';

@@ -16,7 +16,7 @@ import {
 
 import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
 
-import { userGrid, userData } from '../data/userListData';
+import { buildingsGrid, buildingsData } from '../data/userBuildingListData';
 
 import { Header } from '../components';
 
@@ -26,12 +26,12 @@ const Buildings = () => {
       <Header category="Page" title="Buildings" />
       <GridComponent
         id="gridcomp"
-        dataSource={userData}
+        dataSource={buildingsData}
         allowPaging
         allowSorting
       >
         <ColumnsDirective>
-          {userGrid.map((item, index) => (
+          {buildingsGrid.map((item, index) => (
             <ColumnDirective key={index} {...item} />
           ))}
         </ColumnsDirective>

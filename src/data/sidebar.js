@@ -3,6 +3,7 @@ import {
   AiOutlineHome,
   AiOutlineNotification,
   AiOutlineLogin,
+  AiOutlineBgColors,
 } from 'react-icons/ai';
 import { FiUsers, FiSettings } from 'react-icons/fi';
 import { BsBuildings } from 'react-icons/bs';
@@ -57,15 +58,15 @@ export const links = [
         icon: <FiSettings />,
       },
       {
+        name: 'Color-picker',
+        icon: <AiOutlineBgColors />,
+      },
+      {
         name: 'Billing',
         icon: <MdPayment />,
       },
       {
         name: 'Login',
-        icon: <AiOutlineLogin />,
-      },
-      {
-        name: 'Ecommerce',
         icon: <AiOutlineLogin />,
       },
     ],

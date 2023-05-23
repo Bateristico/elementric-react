@@ -3,7 +3,7 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 
 import { GoPrimitiveDot } from 'react-icons/go';
 
-import { Stacked, Pie, SparkLine, Button, MapWidget } from '../components';
+import { Stacked, Pie, SparkLine, Button } from '../components';
 
 import {
   earningData,
@@ -16,6 +16,7 @@ import { dashboardData } from '../data/userDashboardData';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Home = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-24">
       {/* Total bulding section  */}
@@ -30,7 +31,7 @@ const Home = () => {
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="orange"
+              bgColor={currentColor}
               text="Details"
               borderRadius="10px"
               size="md"
@@ -66,7 +67,7 @@ const Home = () => {
 
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2x1 md:w-780">
-          <MapWidget />
+          {/* <MapWidget /> */}
           <div className="flex justify-between">
             <p className="font-semibold text-xl">Localization</p>
             <div className="flex items-center gap-4">
