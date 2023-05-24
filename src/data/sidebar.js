@@ -27,7 +27,7 @@ export const links = [
         icon: <SlMap />,
       },
       {
-        name: 'List',
+        name: 'Buildings',
         icon: <BsBuildings />,
       },
       {

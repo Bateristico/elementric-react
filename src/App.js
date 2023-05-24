@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -70,7 +70,7 @@ const App = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/organization" element={<Organization />} />
                 <Route path="/maps" element={<Maps />} />
-                <Route path="/list" element={<Buildings />} />
+                <Route path="/buildings" element={<Buildings />} />
                 <Route path="/users" element={<Users />} />
                 {/*App*/}
                 <Route path="/events" element={<Events />} />
