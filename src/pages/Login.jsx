@@ -53,9 +53,6 @@ const Login = () => {
                 <input className="mr-2" type="checkbox" />
                 Remember Me
               </p>
-              <a className="underline decoration-solid " href="/">
-                Resend SMS
-              </a>
             </div>
             <button
               className="w-full my-5 py-2 bg-amber-500 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/10 text-white font-semibold rounded-lg"
