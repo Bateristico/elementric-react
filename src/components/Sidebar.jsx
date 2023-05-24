@@ -3,13 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 // import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import logo from '../img/app-icon.png';
+import logoWhiteMode from '../img/elementric-logo.png';
+import logoDarkMode from '../img/elementric-logo-white.png';
 
 import { links } from '../data/sidebar';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize, currentColor } =
+  const { activeMenu, setActiveMenu, screenSize, currentColor, currentMode } =
     useStateContext();
 
   const handleCloseSideBar = () => {
@@ -35,9 +36,9 @@ const Sidebar = () => {
               {/* <SiShopware /> <span>Shoppy</span> */}
               <div>
                 <img
-                  src={logo}
+                  src={currentMode === 'Dark' ? logoDarkMode : logoWhiteMode}
                   alt="elementric_logo"
-                  style={{ width: '100px', height: 'auto' }}
+                  style={{ width: '200px', height: 'auto' }}
                 />
               </div>
             </Link>

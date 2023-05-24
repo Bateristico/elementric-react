@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { Button } from '../components';
+import { Button, MapWidget } from '../components';
 
 import { dashboardData } from '../data/userDashboardData';
 import { useStateContext } from '../contexts/ContextProvider';
@@ -37,7 +37,7 @@ const Home = () => {
           </div>
         </div>
         {/* Items section  */}
-        <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
+        <div className="flex m-3 flex-wrap justify-center gap-2 items-center">
           {dashboardData.map((item) => (
             <div
               key={item.title}
@@ -62,7 +62,6 @@ const Home = () => {
         </div>
       </div>
       {/* New Section */}
-
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2x1 md:w-780">
           {/* <MapWidget /> */}
