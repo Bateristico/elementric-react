@@ -3,7 +3,6 @@ import {
   AiOutlineHome,
   AiOutlineNotification,
   AiOutlineLogin,
-  AiOutlineBgColors,
 } from 'react-icons/ai';
 import { FiUsers, FiSettings } from 'react-icons/fi';
 import { BsBuildings } from 'react-icons/bs';

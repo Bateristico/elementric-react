@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-// import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import logoWhiteMode from '../img/elementric-logo.png';
-import logoDarkMode from '../img/elementric-logo-white.png';
+import logoWhiteMode from '../assets/elementric-logo.png';
+import logoDarkMode from '../assets/elementric-logo-white.png';
 
 import { links } from '../data/sidebar';
 import { useStateContext } from '../contexts/ContextProvider';

@@ -1,9 +1,7 @@
-import aparment from './aparment.jpg';
-// import avatar2 from './avatar2.jpg';
-import avatar3 from './avatar3.png';
-// import avatar4 from './avatar4.jpg';
-import device from './iot-device.png';
-import payment from './payment.png';
+import aparment from '../assets/aparment.jpg';
+import avatar3 from '../assets/avatar3.png';
+import device from '../assets/iot-device.png';
+import payment from '../assets/payment.png';
 
 export const chatData = [
   {

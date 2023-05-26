@@ -15,7 +15,6 @@ import {
   Users,
   Webhooks,
   Login,
-  ColorPicker,
 } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';

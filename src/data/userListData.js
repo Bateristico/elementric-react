@@ -1,4 +1,4 @@
-import avatar from './avatar_unknown.jpg';
+import avatar from '../assets/avatar_unknown.jpg';
 
 export const gridOrderImage = (props) => (
   <div>

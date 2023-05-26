@@ -48,4 +48,3 @@ module.exports = {
   },
   plugins: [],
 };
-// https://i.ibb.co/MkvLDfb/Rectangle-4389.png

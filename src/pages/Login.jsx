@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import logoDarkMode from '../img/elementric-logo-white.png';
-import logoBig from '../img/Elementric-Logo3-highres.png';
+import logoDarkMode from '../assets/elementric-logo-white.png';
 
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
