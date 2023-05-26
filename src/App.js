@@ -78,7 +78,6 @@ const App = () => {
                 {/*Settings*/}
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/billing" element={<Billing />} />
-                <Route path="/color-picker" element={<ColorPicker />} />
                 <Route path="/login" element={<Login />} />
               </Routes>
             </div>

@@ -1,9 +1,9 @@
-import { HiOutlineOfficeBuilding } from 'react-icons/hi';
-import { BsHouses } from 'react-icons/bs';
+import apartment from '../data/apartments 2.jpg';
+import house from '../data/houses.jpg';
 
 export const organizationData = [
   {
-    icon: <HiOutlineOfficeBuilding />,
+    icon: apartment,
     amount: '15',
     type: 'Company',
     title: 'Kolomolo',
@@ -11,17 +11,17 @@ export const organizationData = [
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
   },
-  // {
-  //   icon: <HiOutlineOfficeBuilding />,
-  //   amount: '26',
-  //   type: 'Company',
-  //   title: 'Jarosław PK',
-  //   iconColor: 'rgb(27, 28, 28)',
-  //   iconBg: 'rgb(254, 201, 15)',
-  //   pcColor: 'green-600',
-  // },
   {
-    icon: <BsHouses />,
+    icon: apartment,
+    amount: '26',
+    type: 'Company',
+    title: 'Jarosław PK',
+    iconColor: 'rgb(27, 28, 28)',
+    iconBg: 'rgb(254, 201, 15)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: house,
     amount: '44',
     type: 'Housing Association',
     title: 'Krakow Housing',
@@ -30,7 +30,7 @@ export const organizationData = [
     pcColor: 'green-600',
   },
   {
-    icon: <HiOutlineOfficeBuilding />,
+    icon: apartment,
     amount: '39,354',
     type: 'Company',
     title: 'Airbnb',
@@ -39,7 +39,7 @@ export const organizationData = [
     pcColor: 'red-600',
   },
   {
-    icon: <BsHouses />,
+    icon: house,
     amount: '3',
     type: 'Housing Association',
     title: 'Krakow Hostel',

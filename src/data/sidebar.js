@@ -58,10 +58,6 @@ export const links = [
         icon: <FiSettings />,
       },
       {
-        name: 'Color-picker',
-        icon: <AiOutlineBgColors />,
-      },
-      {
         name: 'Billing',
         icon: <MdPayment />,
       },
