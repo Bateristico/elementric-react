@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useStateContext } from '../contexts/ContextProvider';
+import { useStateContext } from '../context/ContextProvider';
 
 const Button = ({
   icon,

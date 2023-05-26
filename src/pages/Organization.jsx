@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useStateContext } from '../context/ContextProvider';
 import apartment from '../assets/apartments 2.jpg';
 import house from '../assets/houses.jpg';
 const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =

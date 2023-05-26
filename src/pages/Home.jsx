@@ -4,7 +4,7 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { Button, MapWidget } from '../components';
 
 import { dashboardData } from '../data/userDashboardData';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useStateContext } from '../context/ContextProvider';
 
 const Home = () => {
   const { currentColor } = useStateContext();

@@ -6,7 +6,7 @@ import logoWhiteMode from '../assets/elementric-logo.png';
 import logoDarkMode from '../assets/elementric-logo-white.png';
 
 import { links } from '../data/sidebar';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useStateContext } from '../context/ContextProvider';
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu, screenSize, currentColor, currentMode } =
