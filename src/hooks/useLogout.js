@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuthContext } from './useAuthContext';
 
@@ -6,6 +6,7 @@ const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =
   process.env;
 
 export const useLogout = () => {
+  const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
@@ -13,7 +14,6 @@ export const useLogout = () => {
   const logout = async () => {
     setError(null);
     setIsPending(true);
-
     // sign the user out
     try {
       const response = await axios.post(`${BASE_URL}/auth/logout/`, {
@@ -24,18 +24,31 @@ export const useLogout = () => {
       console.log(response.data);
       // dispatch logout action
       dispatch({ type: 'LOGOUT' });
-      setIsPending(false);
-      setError(null);
+
+      // clean up function
+      if (!isCancelled) {
+        setIsPending(false);
+        setError(null);
+      }
     } catch (error) {
-      console.log(error.message);
-      setError(error.message);
-      setIsPending(false);
+      // clean up function
+      if (!isCancelled) {
+        console.log(error.message);
+        setError(error.message);
+        setIsPending(false);
+      }
     }
   };
+
+  // prevent errors on unmounted components who already sent an async request
+  useEffect(() => {
+    return () => setIsCancelled(true);
+  }, []);
 
   return {
     logout,
     error,
     isPending,
+    isCancelled,
   };
 };
