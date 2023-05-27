@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useAuthContext } from './useAuthContext';
 
 const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =
   process.env;
@@ -7,6 +8,7 @@ const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
+  const { dispatch } = useAuthContext();
 
   // send SMS API call
   const getVerificationCode = async (countryCode, phoneNumber) => {
@@ -35,11 +37,10 @@ export const useSignup = () => {
     }
   };
 
-  // validate SMS API call
+  // verification SMS API call
   const signup = async (countryCode, phoneNumber, verificationCode) => {
     setError(null);
     setIsPending(true);
-
     try {
       const body = {
         countryCode,
@@ -56,7 +57,17 @@ export const useSignup = () => {
           },
         }
       );
-      console.log('verification response', response);
+      console.log(response.data);
+      const { token, refreshToken } = response.data;
+
+      // dispatch verification action (logged in)
+      dispatch({
+        type: 'LOGIN',
+        payload: {
+          token,
+          refreshToken,
+        },
+      });
     } catch (error) {
       console.log(error.message);
       setError(error.message);
