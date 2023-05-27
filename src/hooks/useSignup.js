@@ -8,27 +8,26 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
-  const signup = async (countryCode, phoneNumber, verificationCode) => {
+  // send SMS API call
+  const getVerificationCode = async (countryCode, phoneNumber) => {
     setError(null);
     setIsPending(true);
 
     try {
-      // validate user
-      const verificationBody = {
+      const body = {
         countryCode,
-        phoneNumber,
-        verificationCode,
+        phoneNumber: phoneNumber.toString(),
       };
       const response = await axios.post(
-        `${BASE_URL}/password-less/token`,
-        verificationBody,
+        `${BASE_URL}/auth/password-less/start`,
+        body,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         }
       );
-      console.log('validation response', response);
+      console.log(response.data);
     } catch (error) {
       console.log(error.message);
       setError(error.message);
@@ -36,5 +35,34 @@ export const useSignup = () => {
     }
   };
 
-  return { error, isPending, signup };
+  // validate SMS API call
+  const signup = async (countryCode, phoneNumber, verificationCode) => {
+    setError(null);
+    setIsPending(true);
+
+    try {
+      const body = {
+        countryCode,
+        phoneNumber: phoneNumber.toString(),
+        verificationCode: verificationCode.toString(),
+      };
+      console.log(countryCode, phoneNumber, verificationCode);
+      const response = await axios.post(
+        `${BASE_URL}/auth/password-less/token`,
+        body,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      console.log('verification response', response);
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
+      setIsPending(false);
+    }
+  };
+
+  return { error, isPending, signup, getVerificationCode };
 };

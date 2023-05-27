@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const LoginForm = ({ setStep, setCountryCode, setPhoneNumber, logo }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you can call API to send a validation code to the entered phone number
-    setStep(2);
-  };
-
+const LoginForm = ({
+  setCountryCode,
+  setPhoneNumber,
+  logo,
+  handleSubmitPhone,
+}) => {
   return (
     <div className="mt-24">
       <div className="flex flex-col justify-center ">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmitPhone}
           className="max-w-[400px] w-full mx-auto p-8 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-lg"
         >
           <div className="flex justify-center mb-2">

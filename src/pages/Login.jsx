@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from '../components/LoginForm';
-import ValidationForm from '../components/ValidationForm';
+import VerificationForm from '../components/VerificationForm';
+import { useSignup } from '../hooks/useSignup';
 
 import logoDarkMode from '../assets/elementric-logo-white.png';
 
@@ -8,33 +9,39 @@ const Login = () => {
   const [step, setStep] = useState(1); // two step login
   const [countryCode, setCountryCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [validationCode, setValidationCode] = useState('');
+  const [verificationCode, setVerificationCode] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { signup, isPending, error, getVerificationCode } = useSignup();
 
   const handleSubmitPhone = (e) => {
     e.preventDefault();
-    // call API to send a validation code to the entered phone number
+    // call API to send a verification code to the entered phone number
+    getVerificationCode(countryCode, phoneNumber);
     setStep(2);
   };
 
-  const handleSubmitValidationCode = (e) => {
+  const handleSubmitVerificationCode = (e) => {
     e.preventDefault();
-    // Here you can call API to verify the validation code
+    // Here you can call API to verify the verification code
     console.log('Phone number: ', `${countryCode}${phoneNumber}`);
-    console.log('Validation code: ', validationCode);
+    console.log('Verification code: ', verificationCode);
+    signup(countryCode, phoneNumber, verificationCode);
+    setIsLoggedIn(true);
   };
 
   return (
     <div>
       {step === 1 ? (
         <LoginForm
-          setStep={setStep}
           setCountryCode={setCountryCode}
           setPhoneNumber={setPhoneNumber}
+          handleSubmitPhone={handleSubmitPhone}
           logo={logoDarkMode}
         />
       ) : (
-        <ValidationForm
-          setValidationCode={setValidationCode}
+        <VerificationForm
+          setVerificationCode={setVerificationCode}
+          handleSubmitVerificationCode={handleSubmitVerificationCode}
           logo={logoDarkMode}
         />
       )}
