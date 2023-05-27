@@ -5,7 +5,7 @@ import { useAuthContext } from './useAuthContext';
 const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =
   process.env;
 
-export const useSignup = () => {
+export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
@@ -39,7 +39,7 @@ export const useSignup = () => {
   };
 
   // verification SMS API call
-  const signup = async (countryCode, phoneNumber, verificationCode) => {
+  const signIn = async (countryCode, phoneNumber, verificationCode) => {
     setError(null);
     setIsPending(true);
     try {
@@ -90,5 +90,5 @@ export const useSignup = () => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { error, isPending, signup, getVerificationCode };
+  return { error, isPending, signIn, getVerificationCode };
 };

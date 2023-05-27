@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from '../components/LoginForm';
 import VerificationForm from '../components/VerificationForm';
-import { useSignup } from '../hooks/useSignup';
+import { useLogin } from '../hooks/useLogin';
 
 import logoDarkMode from '../assets/elementric-logo-white.png';
 
@@ -10,8 +10,7 @@ const Login = () => {
   const [countryCode, setCountryCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { signup, isPending, error, getVerificationCode } = useSignup();
+  const { signIn, isPending, error, getVerificationCode } = useLogin();
 
   const handleSubmitPhone = (e) => {
     e.preventDefault();
@@ -22,11 +21,10 @@ const Login = () => {
 
   const handleSubmitVerificationCode = (e) => {
     e.preventDefault();
-    // Here you can call API to verify the verification code
+    // call API to verify the verification code
     console.log('Phone number: ', `${countryCode}${phoneNumber}`);
     console.log('Verification code: ', verificationCode);
-    signup(countryCode, phoneNumber, verificationCode);
-    setIsLoggedIn(true);
+    signIn(countryCode, phoneNumber, verificationCode);
   };
 
   return (
