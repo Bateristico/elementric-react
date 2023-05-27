@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLogout } from '../hooks/useLogout';
+
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
@@ -8,6 +10,7 @@ import avatar from '../assets/avatar_unknown.jpg';
 
 const UserProfile = () => {
   const { currentColor } = useStateContext();
+  const { logout } = useLogout();
 
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
@@ -28,17 +31,12 @@ const UserProfile = () => {
           alt="user-profile"
         />
         <div>
-          <p className="font-semibold text-xl dark:text-gray-200">
-            {' '}
-            Camilo Saa{' '}
-          </p>
+          <p className="font-semibold text-xl dark:text-gray-200">Camilo Saa</p>
           <p className="text-gray-500 text-sm dark:text-gray-400">
-            {' '}
-            Administrator{' '}
+            Administrator
           </p>
           <p className="text-gray-500 text-sm font-semibold dark:text-gray-400">
-            {' '}
-            camilo.saa@gmail.com{' '}
+            camilo.saa@gmail.com
           </p>
         </div>
       </div>
@@ -59,21 +57,24 @@ const UserProfile = () => {
             <div>
               <p className="font-semibold dark:text-gray-200 ">{item.title}</p>
               <p className="text-gray-500 text-sm dark:text-gray-400">
-                {' '}
-                {item.desc}{' '}
+                {item.desc}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <div className="mt-5">
-        <Button
-          color="white"
-          bgColor={currentColor}
-          text="Logout"
-          borderRadius="10px"
-          width="full"
-        />
+      <div className="mt-5 flex justify-center">
+        <button
+          className={`p-3  w-60  hover:drop-shadow-xl hover:bg-light-gray`}
+          style={{
+            backgroundColor: currentColor,
+            color: 'white',
+            borderRadius: '10px',
+          }}
+          onClick={logout}
+        >
+          Log out
+        </button>
       </div>
     </div>
   );

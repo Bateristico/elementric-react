@@ -5,7 +5,7 @@ import { useAuthContext } from './useAuthContext';
 const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =
   process.env;
 
-const useLogout = () => {
+export const useLogout = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();

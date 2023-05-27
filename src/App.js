@@ -29,7 +29,7 @@ const App = () => {
     currentMode,
   } = useStateContext();
 
-  const loggedIn = false;
+  const loggedIn = true;
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
