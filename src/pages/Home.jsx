@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { Button, MapWidget } from '../components';
+import { Button } from '../components';
 
 import { dashboardData } from '../data/userDashboardData';
 import { useStateContext } from '../context/ContextProvider';

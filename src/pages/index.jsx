@@ -1,3 +1,4 @@
+export { default as Dashboard } from './Dashboard';
 export { default as Billing } from './Billing';
 export { default as Buildings } from './Buildings';
 export { default as Maps } from './Maps';

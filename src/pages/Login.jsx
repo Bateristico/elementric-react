@@ -10,7 +10,7 @@ const Login = () => {
   const [countryCode, setCountryCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
-  const { signIn, isPending, error, getVerificationCode } = useLogin();
+  const { signIn, isPending, error, getVerificationCode } = useLogin(); // isPending for spinner and error on validation
 
   const handleSubmitPhone = (e) => {
     e.preventDefault();
