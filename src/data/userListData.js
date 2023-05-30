@@ -1,11 +1,5 @@
 import avatar from '../assets/avatar_unknown.jpg';
 
-export const gridOrderImage = (props) => (
-  <div>
-    <img className="rounded-xl h-20 md:ml-3" src={props.Image} alt="avatar" />
-  </div>
-);
-
 export const gridOrderStatus = (props) => (
   <button
     type="button"
@@ -17,32 +11,26 @@ export const gridOrderStatus = (props) => (
 );
 export const userGrid = [
   {
-    headerText: 'Image',
-    template: gridOrderImage,
-    textAlign: 'Center',
-    width: '120',
-  },
-  {
-    field: 'PhoneNumber',
-    headerText: 'Phone number',
+    field: 'name',
+    headerText: 'Name',
     width: '150',
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
   {
-    field: 'FirstName',
-    headerText: 'First Name',
+    field: 'countryCode',
+    headerText: 'Country Code',
     width: '150',
     textAlign: 'Center',
   },
   {
-    field: 'LastName',
-    headerText: 'Last Name',
+    field: 'phoneNumber',
+    headerText: 'Phone Number',
     width: '150',
     textAlign: 'Center',
   },
   {
-    field: 'Role',
+    field: 'role',
     headerText: 'Role',
     format: 'C2',
     textAlign: 'Center',

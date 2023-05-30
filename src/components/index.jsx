@@ -11,6 +11,7 @@ export { default as UserProfile } from './UserProfile';
 export { default as ChartsHeader } from './ChartsHeader';
 export { default as Header } from './Header';
 export { default as MapWidget } from './MapWidget';
+export { default as OrganizationSelector } from './OrganizationSelector';
 // remove later
 export { default as SparkLine } from './Charts/SparkLine';
 export { default as LineChart } from './Charts/LineChart';

@@ -3,7 +3,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from '../components';
+import {
+  Navbar,
+  Footer,
+  Sidebar,
+  ThemeSettings,
+  OrganizationSelector,
+} from '../components';
 import {
   Home,
   Billing,
@@ -71,7 +77,10 @@ const Dashboard = () => {
                   {/*Main Dashboard */}
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
-                  <Route path="/organization" element={<Organization />} />
+                  <Route
+                    path="/organization"
+                    element={<OrganizationSelector />}
+                  />
                   <Route path="/maps" element={<Maps />} />
                   <Route path="/buildings" element={<Buildings />} />
                   <Route path="/users" element={<Users />} />

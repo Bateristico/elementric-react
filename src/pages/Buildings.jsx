@@ -15,7 +15,7 @@ import {
   Inject,
 } from '@syncfusion/ej2-react-grids';
 import { useStateContext } from '../context/ContextProvider';
-import { buildingsData, buildingsGrid } from '../data/userBuildingListData';
+import { buildingsGrid } from '../data/userBuildingListData';
 import { Header } from '../components';
 
 const { REACT_APP_BASE_URL: BASE_URL } = process.env;
@@ -28,8 +28,6 @@ const Buildings = () => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-
-  console.log('Building data', data);
 
   useEffect(() => {
     const fetchData = async () => {

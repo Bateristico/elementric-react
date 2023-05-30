@@ -60,10 +60,6 @@ export const links = [
         name: 'Billing',
         icon: <MdPayment />,
       },
-      {
-        name: 'Login',
-        icon: <AiOutlineLogin />,
-      },
     ],
   },
 ];

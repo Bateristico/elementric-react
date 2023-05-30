@@ -8,7 +8,8 @@ const { REACT_APP_BASE_URL: BASE_URL } = process.env;
 const authToken = sessionStorage.getItem('authToken');
 
 const Organization = () => {
-  const { currentColor, setOrganization } = useStateContext();
+  const { currentColor, setOrganization, currentOrganization } =
+    useStateContext();
 
   // API related code (MUST BE CHANGED TO CONTEXT)
   const [data, setData] = useState(null);
@@ -49,40 +50,46 @@ const Organization = () => {
     return <p>Error: {error}</p>;
   }
 
+  // let containerClass;
+  // if (currentOrganization) {
+  //   containerClass =
+  //     'h-screen w-screen bg-main-dark-bg flex items-center justify-center';
+  // } else {
+  //   containerClass = 'mt-20';
+  // }
+
   return (
-    <div className="h-screen w-screen bg-main-dark-bg">
-      <div className="h-screen w-screen bg-main-dark-bg flex items-center justify-center">
-        <div>
-          <div className="text-center py-10 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-screen mb-40">
-            <h1 className="text-4xl w-69 mx-auto leading-normal font-bold mb-12">
-              Select your organization
-            </h1>
-            <div className="flex justify-center max-w-5xl mx-auto gap-8 group">
-              {data.map((item) => (
-                <div
-                  key={item.name}
-                  className="bg-white/10 duration-200 group-hover:blur-sm hover:!blur-none cursor-pointer group-hover:scale-[0.85] hover:!scale-100 p-8 rounded-xl"
+    <div className="h-screen w-screen bg-main-dark-bg flex items-center justify-center">
+      <div>
+        <div className="text-center py-10 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-screen mb-40">
+          <h1 className="text-4xl w-69 mx-auto leading-normal font-bold mb-12">
+            Select your organization
+          </h1>
+          <div className="flex justify-center max-w-5xl mx-auto gap-8 group">
+            {data.map((item) => (
+              <div
+                key={item.name}
+                className="bg-white/10 duration-200 group-hover:blur-sm hover:!blur-none cursor-pointer group-hover:scale-[0.85] hover:!scale-100 p-8 rounded-xl"
+              >
+                <img
+                  src={item.icon}
+                  alt="avatar"
+                  className="h-20 mx-auto rounded-2xl"
+                />
+                <h4 className="uppercase text-xl font-bold">{item.name}</h4>
+                <p className="text-sm leading-7 my-3 font-light opacity-50">
+                  {item.type}
+                </p>
+                <button
+                  type="button"
+                  className="py-2.5 px-8 rounded-full"
+                  style={{ backgroundColor: currentColor }}
+                  onClick={() => setOrganization(item.id)}
                 >
-                  <img
-                    src={item.icon}
-                    alt="avatar"
-                    className="h-20 mx-auto rounded-2xl"
-                  />
-                  <h4 className="uppercase text-xl font-bold">{item.name}</h4>
-                  <p className="text-sm leading-7 my-3 font-light opacity-50">
-                    {item.type}
-                  </p>
-                  <button
-                    type="button"
-                    className="py-2.5 px-8 rounded-full"
-                    style={{ backgroundColor: currentColor }}
-                    onClick={() => setOrganization(item.id)}
-                  >
-                    Select
-                  </button>
-                </div>
-              ))}
-            </div>
+                  Select
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
