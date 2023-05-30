@@ -6,7 +6,7 @@ const VerificationForm = ({
   handleSubmitVerificationCode,
 }) => {
   return (
-    <div className="mt-24">
+    <div className="dark mt-24">
       <div className="flex flex-col justify-center ">
         <form
           className="max-w-[400px] w-full mx-auto p-8 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-lg"
@@ -19,6 +19,9 @@ const VerificationForm = ({
               style={{ width: '200px', height: 'auto' }}
             />
           </div>
+          <h2 className="text-4x1 dark:text-white font-bold text-center">
+            VERIFICATION
+          </h2>
           <div className="flex flex-col text-gray-400 py-2 mt-10">
             <label>Enter SMS Code</label>
             <input

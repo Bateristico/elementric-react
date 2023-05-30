@@ -7,7 +7,7 @@ const LoginForm = ({
   handleSubmitPhone,
 }) => {
   return (
-    <div className="mt-24">
+    <div className="dark mt-24">
       <div className="flex flex-col justify-center ">
         <form
           onSubmit={handleSubmitPhone}

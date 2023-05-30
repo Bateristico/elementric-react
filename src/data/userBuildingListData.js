@@ -15,34 +15,33 @@ export const gridOrderStatus = (props) => (
 );
 export const buildingsGrid = [
   {
-    field: 'Street',
+    field: 'address',
     headerText: 'Street',
     width: '150',
     textAlign: 'Center',
   },
   {
-    field: 'Number',
-    headerText: 'Number',
+    field: 'country',
+    headerText: 'Country',
     width: '150',
     textAlign: 'Center',
   },
   {
-    field: 'City',
+    field: 'locality',
     headerText: 'City',
     format: 'C2',
     textAlign: 'Center',
-    editType: 'numericedit',
     width: '150',
   },
   {
-    field: 'Country',
-    headerText: 'Country',
+    field: 'postalCode',
+    headerText: 'Postal Code',
     format: 'C2',
     textAlign: 'Center',
     width: '150',
   },
   {
-    field: 'Latitude',
+    field: 'latitude',
     headerText: 'Latitude',
     format: 'C2',
     textAlign: 'Center',
@@ -50,7 +49,7 @@ export const buildingsGrid = [
     width: '150',
   },
   {
-    field: 'Longitude',
+    field: 'longitude',
     headerText: 'Longitude',
     format: 'C2',
     textAlign: 'Center',
@@ -58,7 +57,7 @@ export const buildingsGrid = [
     width: '150',
   },
   {
-    field: 'Type',
+    field: 'type',
     headerText: 'Type',
     format: 'C2',
     textAlign: 'Center',

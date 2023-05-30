@@ -28,21 +28,23 @@ const Login = () => {
   };
 
   return (
-    <div>
-      {step === 1 ? (
-        <LoginForm
-          setCountryCode={setCountryCode}
-          setPhoneNumber={setPhoneNumber}
-          handleSubmitPhone={handleSubmitPhone}
-          logo={logoDarkMode}
-        />
-      ) : (
-        <VerificationForm
-          setVerificationCode={setVerificationCode}
-          handleSubmitVerificationCode={handleSubmitVerificationCode}
-          logo={logoDarkMode}
-        />
-      )}
+    <div className="flex items-center justify-center h-screen bg-gray-900">
+      <div className="mb-40">
+        {step === 1 ? (
+          <LoginForm
+            setCountryCode={setCountryCode}
+            setPhoneNumber={setPhoneNumber}
+            handleSubmitPhone={handleSubmitPhone}
+            logo={logoDarkMode}
+          />
+        ) : (
+          <VerificationForm
+            setVerificationCode={setVerificationCode}
+            handleSubmitVerificationCode={handleSubmitVerificationCode}
+            logo={logoDarkMode}
+          />
+        )}
+      </div>
     </div>
   );
 };

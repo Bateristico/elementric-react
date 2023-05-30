@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuthContext } from './useAuthContext';
 
-const { REACT_APP_API_JWT: accessToken, REACT_APP_BASE_URL: BASE_URL } =
-  process.env;
+const { REACT_APP_BASE_URL: BASE_URL } = process.env;
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -23,12 +22,7 @@ export const useLogin = () => {
       };
       const response = await axios.post(
         `${BASE_URL}/auth/password-less/start`,
-        body,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
+        body
       );
       console.log(response.data);
     } catch (error) {
@@ -51,12 +45,7 @@ export const useLogin = () => {
       console.log(countryCode, phoneNumber, verificationCode);
       const response = await axios.post(
         `${BASE_URL}/auth/password-less/token`,
-        body,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
+        body
       );
       console.log(response.data);
       const { token, refreshToken } = response.data;
@@ -69,6 +58,7 @@ export const useLogin = () => {
           refreshToken,
         },
       });
+      sessionStorage.setItem('authToken', token);
 
       // clean up function
       if (!isCancelled) {
