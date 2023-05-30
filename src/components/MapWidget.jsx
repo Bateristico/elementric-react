@@ -1,6 +1,5 @@
 import React from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import '../styles/MapView.css';
 
 const MapWidget = () => {
   const { isLoaded } = useLoadScript({
@@ -14,9 +13,9 @@ const MapWidget = () => {
 function Map() {
   return (
     <GoogleMap
-      zoom={17}
+      zoom={12}
       center={{ lat: 50.058974535127106, lng: 19.94937301787824 }}
-      mapContainerClassName="map-container"
+      mapContainerClassName="map-container-widget"
     ></GoogleMap>
   );
 }

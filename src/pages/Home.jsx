@@ -2,7 +2,7 @@ import React from 'react';
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { Button } from '../components';
-
+import { MapWidget } from '../components';
 import { dashboardData } from '../data/userDashboardData';
 import { useStateContext } from '../context/ContextProvider';
 
@@ -62,20 +62,9 @@ const Home = () => {
         </div>
       </div>
       {/* New Section */}
-      <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2x1 md:w-780">
-          {/* <MapWidget /> */}
-          <div className="flex justify-between">
-            <p className="font-semibold text-xl">Localization</p>
-            <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
-                <span>
-                  <GoPrimitiveDot />
-                </span>
-                <span>Expense</span>
-              </p>
-            </div>
-          </div>
+      <div className="">
+        <div className="flex justify-center">
+          <MapWidget />
         </div>
       </div>
     </div>
@@ -83,3 +72,17 @@ const Home = () => {
 };
 
 export default Home;
+// flex justify-items-center justify-center
+// bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2x1 md:w-780
+/*
+<div className="flex justify-between">
+<p className="font-semibold text-xl">Localization</p>
+<div className="flex items-center gap-4">
+  <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
+    <span>
+      <GoPrimitiveDot />
+    </span>
+  </p>
+</div>
+</div>
+*/

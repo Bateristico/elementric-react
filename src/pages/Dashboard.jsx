@@ -5,10 +5,10 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import {
   Navbar,
-  Footer,
   Sidebar,
   ThemeSettings,
   OrganizationSelector,
+  Footer,
 } from '../components';
 import {
   Home,
@@ -93,11 +93,11 @@ const Dashboard = () => {
                   <Route path="/login" element={<Login />} />
                 </Routes>
               </div>
-              <Footer />
             </div>
           </div>
         </BrowserRouter>
       )}
+      <Footer />
     </div>
   );
 };
