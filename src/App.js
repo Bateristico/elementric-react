@@ -1,10 +1,11 @@
 import React from 'react';
 import { Dashboard, Login } from './pages';
 import './App.css';
-const authToken = sessionStorage.getItem('authToken');
+import { useAuthContext } from './hooks/useAuthContext';
 
 const App = () => {
-  return <div>{!authToken ? <Login /> : <Dashboard />}</div>;
+  const { user } = useAuthContext();
+  return <div>{!user ? <Login /> : <Dashboard />}</div>;
 };
 
 export default App;
