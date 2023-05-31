@@ -42,9 +42,12 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('https://img.freepik.com/free-vector/city-skyline-concept-illustration_114360-8923.jpg?w=2000')",
+          "url('https://www.bproperty.com/blog/wp-content/uploads/appartment-building-appartments-architecture-87223-1-1.jpg')",
       },
     },
   },
   plugins: [],
 };
+// https://www.bproperty.com/blog/wp-content/uploads/appartment-building-appartments-architecture-87223-1-1.jpg
+
+// https://img.freepik.com/free-vector/city-skyline-concept-illustration_114360-8923.jpg?w=2000
