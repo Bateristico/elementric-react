@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLogout } from '../hooks/useLogout';
-
+import { motion } from 'framer-motion';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
@@ -13,7 +13,12 @@ const UserProfile = () => {
   const { logout } = useLogout();
 
   return (
-    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96"
+    >
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
         <Button
@@ -74,7 +79,7 @@ const UserProfile = () => {
           Log out
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

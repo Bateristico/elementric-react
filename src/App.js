@@ -7,7 +7,7 @@ const App = () => {
   const { user } = useAuthContext();
   const authToken = sessionStorage.getItem('authToken');
   console.log('auth token in app', authToken);
-  return <div>{!user ? <Login /> : <Dashboard />}</div>;
+  return <div>{!authToken ? <Login /> : <Dashboard />}</div>;
 };
 
 export default App;
