@@ -59,6 +59,7 @@ export const useLogin = () => {
         },
       });
       sessionStorage.setItem('authToken', token);
+      console.log(sessionStorage.getItem('authToken'));
 
       // clean up function
       if (!isCancelled) {

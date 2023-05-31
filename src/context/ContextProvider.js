@@ -34,7 +34,6 @@ export const ContextProvider = ({ children }) => {
   const setOrganization = (organizationId) => {
     setCurrentOrganization(organizationId);
     localStorage.setItem('organization', organizationId);
-    console.log('setting organization id', organizationId);
   };
 
   return (

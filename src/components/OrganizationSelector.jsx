@@ -9,9 +9,7 @@ const { REACT_APP_BASE_URL: BASE_URL } = process.env;
 const authToken = sessionStorage.getItem('authToken');
 
 const OrganizationSelector = () => {
-  const { currentColor, setOrganization, currentOrganization } =
-    useStateContext();
-  console.log('current organization from local', currentOrganization);
+  const { currentColor, setOrganization } = useStateContext();
   // API related code (MUST BE CHANGED TO CONTEXT)
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

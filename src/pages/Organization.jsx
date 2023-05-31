@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 import { useStateContext } from '../context/ContextProvider';
 import apartment from '../assets/apartments 2.jpg';
 import house from '../assets/houses.jpg';
@@ -8,8 +9,7 @@ const { REACT_APP_BASE_URL: BASE_URL } = process.env;
 const authToken = sessionStorage.getItem('authToken');
 
 const Organization = () => {
-  const { currentColor, setOrganization, currentOrganization } =
-    useStateContext();
+  const { currentColor, setOrganization } = useStateContext();
 
   // API related code (MUST BE CHANGED TO CONTEXT)
   const [data, setData] = useState(null);
@@ -50,25 +50,24 @@ const Organization = () => {
     return <p>Error: {error}</p>;
   }
 
-  // let containerClass;
-  // if (currentOrganization) {
-  //   containerClass =
-  //     'h-screen w-screen bg-main-dark-bg flex items-center justify-center';
-  // } else {
-  //   containerClass = 'mt-20';
-  // }
-
   return (
     <div className="h-screen w-screen bg-main-dark-bg flex items-center justify-center">
-      <div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="text-center py-10 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-screen mb-40">
           <h1 className="text-4xl w-69 mx-auto leading-normal font-bold mb-12">
             Select your organization
           </h1>
           <div className="flex justify-center max-w-5xl mx-auto gap-8 group">
-            {data.map((item) => (
-              <div
+            {data.map((item, index) => (
+              <motion.div
                 key={item.name}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
                 className="bg-white/10 duration-200 group-hover:blur-sm hover:!blur-none cursor-pointer group-hover:scale-[0.85] hover:!scale-100 p-8 rounded-xl"
               >
                 <img
@@ -88,11 +87,11 @@ const Organization = () => {
                 >
                   Select
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

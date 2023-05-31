@@ -30,31 +30,54 @@ const Buildings = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const fetchBuildings = async () => {
+      const response = await axios.get(
+        `${BASE_URL}/buildings?organisationId=${currentOrganization}`,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
+      return response.data;
+    };
+
+    const fetchLeaks = async () => {
+      const response = await axios.get(
+        `${BASE_URL}/buildings/apartments-leaks`,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
+      return response.data;
+    };
+
     const fetchData = async () => {
       setIsPending(true);
       try {
-        const response = await axios.get(
-          `${BASE_URL}/buildings?organisationId=${currentOrganization}`,
-          {
-            headers: {
-              Authorization: `Bearer ${authToken}`,
-            },
+        const [buildings, leaks] = await Promise.all([
+          fetchBuildings(),
+          fetchLeaks(),
+        ]);
+        const updatedBuildings = buildings.map((building) => {
+          const leak = leaks.find((leak) => leak.id === building.id);
+          if (leak) {
+            return { ...building, status: 'error' };
+          } else {
+            return { ...building, status: 'operative' };
           }
-        );
-        console.log('organization endpoint response', response.data);
-        setData(response.data);
+        });
+        setData(updatedBuildings);
         setIsPending(false);
       } catch (error) {
         setError(error.message);
-      } finally {
         setIsPending(false);
       }
     };
-
     fetchData();
   }, []);
-
-  console.log('is pending', isPending);
 
   return (
     <>

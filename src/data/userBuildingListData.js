@@ -13,6 +13,21 @@ export const gridOrderStatus = (props) => (
     {props.Status}
   </button>
 );
+
+const customerGridStatus = (props) => (
+  <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
+    <p
+      style={
+        props.status === 'error'
+          ? { background: 'red' }
+          : { background: 'green' }
+      }
+      className="rounded-full h-3 w-3"
+    />
+    <p>{props.status}</p>
+  </div>
+);
+
 export const buildingsGrid = [
   {
     field: 'address',
@@ -62,6 +77,14 @@ export const buildingsGrid = [
     format: 'C2',
     textAlign: 'Center',
     width: '150',
+  },
+  {
+    field: 'status',
+    headerText: 'Status',
+    width: '130',
+    format: 'yMd',
+    textAlign: 'Center',
+    template: customerGridStatus,
   },
 ];
 
